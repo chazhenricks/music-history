@@ -4,10 +4,114 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+<header class="top-nav">
+  <ul>
+    <li><a href="#">View Music </a></li>
+    <li><a href="#">Add Music </a></li>
+    <li><a href="#">Profile </a></li>
+  </ul>
+</header>
+<div class="wrapper">
+  <article class="filters">
+      <section class="song-length">
+        <label for="song-length">Song Length: </label>
+        <input type="range" id="song-length">
+      </section>
 
+      <section>
+        <label for="artist-select"> Artist: </label><br>
+        <select id="artist-select">
+          <option>Ryan Adams</option>
+          <option>Foo Fighters </option>
+          <option>Brand New </option>
+          <option>The Japanese House</option>
+          <option>Mutemath </option>
+        </select>
+      </section>
+
+      <section>
+        <label for="album-select"> Album: </label><br>
+        <select id="album-select">
+          <option>Prisoner</option>
+          <option>Sonic Highways</option>
+          <option>The Devil And God Are Raging Inside Me</option>
+          <option>Swim Agains The Tide</option>
+          <option>Odd Soul</option>
+        </select><br>
+      </section>
+
+      <section>
+        <label>Genre: </label><br>
+        <div class="genres">
+          <ul class="checkboxes">
+            <li><input type="checkbox" name="genre" value="rock">Rock</li>
+            <li><input type="checkbox" name="genre" value="indie">Indie</li>
+            <li><input type="checkbox" name="genre" value="metal">Metal</li>
+          </ul>
+          <ul class="checkboxes">
+            <li><input type="checkbox" name="genre" value="pop">Pop</li>
+            <li><input type="checkbox" name="genre" value="hip-hop">Hip-Hop</li>
+            <li><input type="checkbox" name="genre" value="classical">Classical </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="filter-button">
+        <button type="button"> Filter </button>
+      </section>
+  </article>
+
+  <article class="song-list">
+    <section>
+      <header>
+        <h2>Song Name</h2>
+      </header>
+      <ul>
+        <li>Artist Name</li>
+        <li>Album Name </li>
+        <li>Genre </li>
+      </ul>
+    </section>
+
+    <section>
+      <header>
+        <h2>Song Name</h2>
+      </header>
+      <ul>
+        <li>Artist Name</li>
+        <li>Album Name </li>
+        <li>Genre </li>
+      </ul>
+    </section>
+
+    <section>
+      <header>
+        <h2>Song Name</h2>
+      </header>
+      <ul>
+        <li>Artist Name</li>
+        <li>Album Name </li>
+        <li>Genre </li>
+      </ul>
+    </section>
+
+    <section>
+      <header>
+        <h2>Song Name</h2>
+      </header>
+      <ul>
+        <li>Artist Name</li>
+        <li>Album Name </li>
+        <li>Genre </li>
+      </ul>
+    </section>
+  </article>
+
+</div>
 
 </body>
 </html>

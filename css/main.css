@@ -1,0 +1,143 @@
+/***********
+TOP NAV
+***********/
+
+.top-nav{
+  border: 1px solid black;
+  background-color: #FFB4B0;
+}
+
+.top-nav ul{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.top-nav li{
+  margin-left: .5em;
+  padding-left: .5em;
+  list-style-type: none;
+
+}
+
+.top-nav li:not(:first-child){
+  border-left: 1px solid black;
+}
+
+.top-nav a{
+  text-decoration: none;
+}
+
+/********
+Main Wrapper
+********/
+.wrapper {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+/********
+Filters
+********/
+
+.filters {
+  border: 1px black solid;
+  background-color: #4DD7FA;
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.filters section {
+  margin-left: 1em;
+}
+
+.filters section{
+  margin-top: 1em;
+}
+
+.genres {
+  display: flex;
+  justify-content: center;
+}
+
+
+.filters label {
+  display: block;
+}
+
+
+.checkboxes{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 .5em;
+}
+
+.checkboxes li{
+  list-style-type: none;
+}
+
+
+
+
+
+/********
+song-list
+********/
+
+.song-list{
+  border: 1px black solid;
+  background-color: #FEFAC0;
+  color: #785616;
+  width: 75%;
+}
+
+.song-list section{
+  margin-left: 1em;
+}
+
+.song-list ul{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.song-list li{
+  margin-left: .5em;
+  padding-left: .5em;
+  list-style-type: none;
+}
+
+.song-list li:not(:first-child){
+  border-left: 1px solid black;
+
+  }
+
+/***********
+Filter Button
+************/
+.filter-button{
+  display: flex;
+  justify-content: center;
+}
+
+.filter-button button{
+  width: 50%;
+  font-family: "Helvetica";
+  font-size: 1.25em;
+}
+
+
+
+
+
+
+
+
+
+
+

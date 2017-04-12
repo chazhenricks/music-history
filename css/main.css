@@ -83,7 +83,10 @@ Filters
 }
 
 
-
+#album-select,
+#artist-select{
+  width: 80%;
+}
 
 
 /********

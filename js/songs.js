@@ -27,7 +27,7 @@ songs.forEach(function(element, index, array){
 
 //Add each string to the DOM in index.html in the main content area.
 
-
-
+var song1 = document.getElementById("song-1");
+song1.innerHTML = "<h2>" + songs[0] + "</h2>";
 
 

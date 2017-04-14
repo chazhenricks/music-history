@@ -25,61 +25,85 @@ songs.forEach(function(element, index, array){
 })
 
 
-//Add each string to the DOM in index.html in the main content area.
+// //Add each string to the DOM in index.html in the main content area.
 
 
-  //SONG
-    //identify where song names begin
-    //identify where song names end
-    //slice the string from the array from song name beginning and ending and put in new var
-    //select element where song name needs to go
-    //set innerHTML of element to var containing song name
-    var songNamesDom = [];
-    songNamesDom = document.getElementsByClassName("song-name");
-    songs.forEach(function(element, index, array){
+//   //SONG
+//     //identify where song names begin
+//     //identify where song names end
+//     //slice the string from the array from song name beginning and ending and put in new var
+//     //select element where song name needs to go
+//     //set innerHTML of element to var containing song name
+//     var songNamesDom = [];
+//     songNamesDom = document.getElementsByClassName("song-name");
+//     songs.forEach(function(element, index, array){
+//       var songStart = 0;
+//       var songEnd = element.indexOf(" -");
+//       var songName = element.slice(songStart, songEnd);
+//       songNamesDom[index].innerHTML = songName;
+//     })
+
+
+
+//   //Artist
+//     //identify where artist names begin
+//     //identify where artist names end
+//     //slice the string from the array from artist name beginning and ending and put in new var
+//     //select element where artist name needs to go
+//     //set innerHTML of element to var containing artist name
+
+//     var artistNamesDom = [];
+//     artistNamesDom = document.getElementsByClassName("artist-name");
+//     songs.forEach(function(element, index, array){
+//       var artistStart = element.indexOf("y ") + 2;
+//       var artistEnd = element.indexOf(" on");
+//       var artistName = element.slice(artistStart, artistEnd);
+//       artistNamesDom[index].innerHTML = artistName;
+//     })
+
+//   //Album
+//     //identify where album names begin
+//     //identify where album names end
+//     //slice the string from the array from album name beginning and ending and put in new var
+//     //select element where album name needs to go
+//     //set innerHTML of element to var containing album name
+
+//     var albumNamesDom = [];
+//     albumNamesDom = document.getElementsByClassName("album-name");
+//     songs.forEach(function(element, index, array){
+//       var albumStart = element.indexOf("um ") + 3;
+//       var albumEnd = element.length;
+//       var albumName = element.slice(albumStart, albumEnd);
+//       albumNamesDom[index].innerHTML = albumName;
+//     })
+  var songList = document.getElementById("song-list");
+
+  songs.forEach(function(element, index, array){
       var songStart = 0;
       var songEnd = element.indexOf(" -");
       var songName = element.slice(songStart, songEnd);
-      songNamesDom[index].innerHTML = songName;
-    })
 
-
-
-  //Artist
-    //identify where artist names begin
-    //identify where artist names end
-    //slice the string from the array from artist name beginning and ending and put in new var
-    //select element where artist name needs to go
-    //set innerHTML of element to var containing artist name
-
-    var artistNamesDom = [];
-    artistNamesDom = document.getElementsByClassName("artist-name");
-    songs.forEach(function(element, index, array){
       var artistStart = element.indexOf("y ") + 2;
       var artistEnd = element.indexOf(" on");
       var artistName = element.slice(artistStart, artistEnd);
-      artistNamesDom[index].innerHTML = artistName;
-    })
 
-  //Album
-    //identify where album names begin
-    //identify where album names end
-    //slice the string from the array from album name beginning and ending and put in new var
-    //select element where album name needs to go
-    //set innerHTML of element to var containing album name
-
-    var albumNamesDom = [];
-    albumNamesDom = document.getElementsByClassName("album-name");
-    songs.forEach(function(element, index, array){
       var albumStart = element.indexOf("um ") + 3;
       var albumEnd = element.length;
       var albumName = element.slice(albumStart, albumEnd);
-      albumNamesDom[index].innerHTML = albumName;
-    })
 
+      var items = ` <section>
+                      <header>
+                        <h2>${songName}</h2>
+                      </header>
+                      <ul>
+                        <li>${artistName}</li>
+                        <li>${albumName}</li>
+                        <li>Genre</li>
+                      </ul>
+                    </section>`;
+      songList.innerHTML += items;
 
-
-
+})
 
 
 

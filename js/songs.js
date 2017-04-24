@@ -12,6 +12,28 @@ songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little
 songs.push("Do You Still Love Me > by Ryan Adams on the album Prisoner");
 songs.unshift("Typical > by Mutemath on the album Mutemath")
 
+//Take input from add music page and add to songs[];
+var addSong = document.getElementById("add-song");
+var addArtist = document.getElementById("add-artist");
+var addAlbum = document.getElementById("add-album");
+var addButton = document.getElementById("add-button");
+
+addButton.addEventListener("click", addToList);
+
+function addToList(event){
+  songs.push(`${addSong.value} > by ${addArtist.value} on the album ${addAlbum.value}`);
+}
+
+//Addevent listener to hide and unhide the add music page and filters and
+
+var addMusic = document.getElementById("add-music-button");
+addMusic.addEventListener("click", showAddMusic);
+
+function showAddMusic(event){
+};
+
+
+
 
 //Loop over the array, and remove any words or characters that obviously don't belong.
 songs.forEach(function(element, index, array){

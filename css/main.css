@@ -1,3 +1,43 @@
+/**************
+Hidden
+**************/
+.hidden {
+  display: none;
+}
+
+.visable {
+  display: block;
+}
+
+/*************
+Add Music
+**************/
+#add-music{
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+}
+.add-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: .5em;
+}
+.add-container input{
+  width: 200px;
+  border: 2px solid black;
+}
+
+#add-button{
+  width: 60%;
+  margin: 1em auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1.25em;
+}
+
+
+
 /***********
 TOP NAV
 ***********/

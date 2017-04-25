@@ -24,6 +24,17 @@ function addToList(event){
   songs.push(`${addSong.value} - by ${addArtist.value} on the album ${addAlbum.value}`);
   console.log(addSong.value, addArtist.value, addAlbum.value);
   console.log("songs", songs);
+  songList.innerHTML +=
+                    `<section>
+                      <header>
+                        <h2>${addSong.value}</h2>
+                      </header>
+                      <ul>
+                        <li>${addArtist.value}</li>
+                        <li>${addAlbum.value}</li>
+                        <li>Genre</li>
+                      </ul>
+                    </section>`;
 
 }
 

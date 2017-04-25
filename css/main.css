@@ -1,17 +1,11 @@
-/**************
-Hidden
-**************/
-.hidden {
-  display: none;
-  visibility: collapse;
-}
+
 
 
 
 /*************
 Add Music
 **************/
-#add-music{
+.add-music{
   margin: 1em auto;
   display: flex;
   flex-direction: column;
@@ -34,6 +28,10 @@ Add Music
   border-radius: 5px;
   font-size: 1.25em;
 }
+.add-music .hidden {
+  display: none;
+}
+
 
 
 
@@ -176,6 +174,16 @@ Filter Button
 
 
 
+/**************
+Hidden
+**************/
+.hidden {
+  display: none;
+}
+
+.filters .hidden{
+  display:none;
+}
 
 
 

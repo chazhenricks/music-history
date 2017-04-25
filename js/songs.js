@@ -24,6 +24,7 @@ function addToList(event){
   songs.push(`${addSong.value} - by ${addArtist.value} on the album ${addAlbum.value}`);
   console.log(addSong.value, addArtist.value, addAlbum.value);
   console.log("songs", songs);
+
 }
 
 //Addevent listener to hide and unhide the add music page and filters and
@@ -33,7 +34,7 @@ var viewMusicButton = document.getElementById("view-music-button");
 var addMusicButton = document.getElementById("add-music-button");
 
 var addMusicPage = document.getElementById("add-music");
-var musicFilterPage = document.getElementById("filter-wrapper");
+var musicFilterPage = document.getElementById("filters");
 var songsListPage = document.getElementById("song-list");
 
 
@@ -41,14 +42,11 @@ addMusicButton.addEventListener("click", showAddMusic);
 viewMusicButton.addEventListener("click", hideAddMusic);
 
 function showAddMusic(event){
-  addMusicPage.classList.add("visable")
   addMusicPage.classList.remove("hidden");
 
   songsListPage.classList.add("hidden")
-  songsListPage.classList.remove("visable");
 
   musicFilterPage.classList.add("hidden")
-  musicFilterPage.classList.remove("visable");
 
   console.log("addMusicPage class", addMusicPage.classList);
   console.log("musicFilterPage class", musicFilterPage.classList);
@@ -158,8 +156,8 @@ songs.forEach(function(element, index, array){
                       </ul>
                     </section>`;
       songList.innerHTML += items;
+  })
 
-})
 
 
 

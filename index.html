@@ -16,8 +16,7 @@
   </ul>
 </header>
 <div class="wrapper">
-  <div id ="filter-wrapper" class="hidden">
-    <article class="filters">
+    <article class="filters" id="filters">
         <section class="song-length">
           <label for="song-length">Song Length: </label>
           <input type="range" id="song-length">
@@ -65,11 +64,10 @@
           <button type="button"> Filter </button>
         </section>
     </article>
-  </div> <!-- END FILTER HIDDEN DIV WRAPPER -->
 
-  <article class="hidden" id="song-list" class ="song-list"></article>
+  <article id="song-list" class ="song-list"></article>
 
-  <article class="" id="add-music">
+  <article class="hidden" id="add-music">
     <div class="add-container">
       <label for="add-song">Song Name:</label>
       <input type="text" id="add-song">

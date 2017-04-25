@@ -3,6 +3,7 @@ Hidden
 **************/
 .hidden {
   display: none;
+  visibility: collapse;
 }
 
 

@@ -1,13 +1,26 @@
 //Setting up XHR for music
 var musicRequest = new XMLHttpRequest();
+var musicRequest2 = new XMLHttpRequest();
+
 musicRequest.open("GET", "music.json");
+musicRequest2.open("GET", "music2.json");
+
 musicRequest.send();
+musicRequest2.send();
+
 
 //declaring event listeners for XHR
 musicRequest.addEventListener("load", getMusic);
+musicRequest2.addEventListener("load", getMusic2);
 
-//declaring variable to store music
+//declaring variable to store parsed music JSON file
 var musicList = "";
+var musicList2 ="";
+
+
+//variable for HTML elements to be written to page
+var musicHTML = "";
+var moreBtn = "";
 
 //declaring HTML element for musicList to go
 var songList = document.getElementById("song-list");
@@ -18,10 +31,13 @@ function getMusic(event){
     populateDOM();
   };
 
+  function getMusic2(event){
+    musicList2 = JSON.parse(this.responseText);
+
+  }
+
 
 function populateDOM(){
-    var musicHTML = "";
-
     for (var i=0;i<musicList.music.length;i++){
         musicHTML +=
          ` <section>
@@ -37,7 +53,35 @@ function populateDOM(){
             </section>`
     }
 
+  musicHTML += `<button id="more">More</button>`;
   songList.innerHTML = musicHTML;
+  addDelete();
+
+
+  moreBtn = document.getElementById("more");
+  moreBtn.addEventListener("click", function(event){
+    populateDOM2();
+  });
+};
+
+function populateDOM2 (){
+  var musicHTML2 = "";
+  for (var i=0;i<musicList2.music.length;i++){
+         musicHTML2 +=
+         ` <section>
+                  <header>
+                    <h2>${musicList2.music[i].song}</h2>
+                  </header>
+                  <ul>
+                    <li>${musicList2.music[i].artist}</li>
+                    <li>${musicList2.music[i].album}</li>
+                    <li>${musicList2.music[i].genre}</li>
+                  <li><button class="delete">X</button></li>
+                  </ul>
+            </section>`
+    }
+   songList.innerHTML = musicHTML;
+  songList.innerHTML += musicHTML2;
   addDelete();
 };
 
@@ -84,7 +128,11 @@ function hideAddMusic(event){
 };
 
 
-//Add button on Add Music page pushed another item to music.json file
+
+
+
+
+//Add button on Add Music page pushed another item to music2.json file
 
 var addBtn = document.getElementById("add-button");
 
@@ -94,14 +142,14 @@ addBtn.addEventListener("click", function(event){
   var newAlbum = document.getElementById("add-song");
   var newGenre = document.getElementById("add-genre")
 
-  musicList.music.push(
+  musicList2.music.push(
     {
       "artist": newArtist.value,
       "song": newSong.value,
       "album": newAlbum.value,
       "genre": newGenre.value
     });
-  populateDOM();
+  populateDOM2();
 });
 
 

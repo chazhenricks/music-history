@@ -1,0 +1,17 @@
+{
+    "music" :
+    [
+        {
+            "artist": "Mutemath",
+            "song": "Typical",
+            "album":"Mutemath",
+            "genre": "Rock"
+        },
+        {
+            "artist": "Ryan Adams",
+            "song": "Do You Still Love Me",
+            "album":"Prisoner",
+            "genre": "Rock"
+        }
+    ]
+}

@@ -36,7 +36,7 @@ function getMusic(event){
 
   }
 
-
+//Stores original music.json info to musicHTML var and writes to page.
 function populateDOM(){
     for (var i=0;i<musicList.music.length;i++){
         musicHTML +=
@@ -55,15 +55,18 @@ function populateDOM(){
 
   musicHTML += `<button id="more">More</button>`;
   songList.innerHTML = musicHTML;
+
+  //runs the function to add event listeners to all of the delete buttons
   addDelete();
 
-
+//creates a "more" button and adds event listener to show music2 JSON file
   moreBtn = document.getElementById("more");
   moreBtn.addEventListener("click", function(event){
     populateDOM2();
   });
 };
 
+//function that adds info from music2 json file to var and adds to page
 function populateDOM2 (){
   var musicHTML2 = "";
   for (var i=0;i<musicList2.music.length;i++){
@@ -80,7 +83,9 @@ function populateDOM2 (){
                   </ul>
             </section>`
     }
-   songList.innerHTML = musicHTML;
+
+  //replaces DOM with original music.json info as well as the newly appended music2.json info
+  songList.innerHTML = musicHTML;
   songList.innerHTML += musicHTML2;
   addDelete();
 };

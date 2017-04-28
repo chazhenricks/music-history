@@ -12,6 +12,7 @@ var musicList = "";
 //declaring HTML element for musicList to go
 var songList = document.getElementById("song-list");
 
+//getMusic function that runs when page loads
 function getMusic(event){
     musicList = JSON.parse(this.responseText);
 
@@ -29,22 +30,24 @@ function getMusic(event){
                   <li><button class="delete">X</button></li>
                   </ul>
             </section>`
-
     }
 
-  //Add event listeners to delete buttons to remove
+  songList.innerHTML = musicHTML;
+  addDelete();
+};
+
+//Add event listeners to delete buttons to remove
+function addDelete(){
   var deleteBtns = document.getElementsByClassName("delete");
   console.log("deleteBtns", deleteBtns);
   for (var i=0;i<deleteBtns.length;i++){
       deleteBtns.item(i).addEventListener("click", function(event){
-        var remove = event.target;
-        remove.closest("section").removeChild(remove);
+        var getOuttaHere = event.target.closest("section");
+        console.log("getOuttaHere", getOuttaHere);
+        getOuttaHere.remove(getOuttaHere);
       });
   }
-    songList.innerHTML = musicHTML;
 }
-
-
 
 
 //Addevent listener to hide and unhide the add music page and filters and
@@ -84,10 +87,6 @@ addBtn.addEventListener("click", function(event){
   var newArtist = document.getElementById("add-artist");
   var newSong = document.getElementById("add-song");
   var newAlbum = document.getElementById("add-song");
-
-
-
-
 
 });
 

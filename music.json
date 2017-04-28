@@ -1,0 +1,47 @@
+{
+    "music" :
+    [
+        {
+            "artist": "ZZ Top",
+            "song": "Legs",
+            "album":"Eliminator",
+            "genre": "Rock"
+        },
+        {
+            "artist": "Supertramp",
+            "song": "The Logical Song",
+            "album":"Breakfast In America",
+            "genre": "Rock"
+        },
+        {
+            "artist": "Pink Floyd",
+            "song": "Another Brick In The Wall",
+            "album":"The Wall",
+            "genre": "Rock"
+        },
+        {
+            "artist": "Guns And Roses",
+            "song": "Welcome To The Jungle",
+            "album":"Appetite For Desctruction",
+            "genre": "Rock"
+        },
+        {
+            "artist": "Alanis Morisette",
+            "song": "Ironic",
+            "album":"Jagged Little Pill",
+            "genre": "Rock"
+        },
+        {
+            "artist": "Mutemath",
+            "song": "Typical",
+            "album":"Mutemath",
+            "genre": "Rock"
+        },
+        {
+            "artist": "Ryan Adams",
+            "song": "Do You Still Love Me",
+            "album":"Prisoner",
+            "genre": "Rock"
+        }
+    ]
+}

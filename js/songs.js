@@ -1,47 +1,53 @@
-//initial songs array
+//Setting up XHR for music
+var musicRequest = new XMLHttpRequest();
+musicRequest.open("GET", "music.json");
+musicRequest.send();
 
-var songs = [];
+//declaring event listeners for XHR
+musicRequest.addEventListener("load", getMusic);
 
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
+//declaring variable to store music
+var musicList = "";
 
+//declaring HTML element for musicList to go
+var songList = document.getElementById("song-list");
 
+function getMusic(event){
+    musicList = JSON.parse(this.responseText);
 
-//Add one song to the beginning and the end of the array.
-songs.push("Do You Still Love Me > by Ryan Adams on the album Prisoner");
-songs.unshift("Typical > by Mutemath on the album Mutemath")
+    var musicHTML = "";
+    for (var i=0;i<musicList.music.length;i++){
+        musicHTML +=
+         ` <section>
+                  <header>
+                    <h2>${musicList.music[i].song}</h2>
+                  </header>
+                  <ul>
+                    <li>${musicList.music[i].artist}</li>
+                    <li>${musicList.music[i].album}</li>
+                    <li>${musicList.music[i].genre}</li>
+                  <li><button class="delete">X</button></li>
+                  </ul>
+            </section>`
 
-//Take input from add music page and add to songs[];
-var addSong = document.getElementById("add-song");
-var addArtist = document.getElementById("add-artist");
-var addAlbum = document.getElementById("add-album");
-var addButton = document.getElementById("add-button");
+    }
 
-addButton.addEventListener("click", addToList);
-
-function addToList(event){
-  songs.push(`${addSong.value} - by ${addArtist.value} on the album ${addAlbum.value}`);
-  console.log(addSong.value, addArtist.value, addAlbum.value);
-  console.log("songs", songs);
-  songList.innerHTML +=
-                    `<section>
-                      <header>
-                        <h2>${addSong.value}</h2>
-                      </header>
-                      <ul>
-                        <li>${addArtist.value}</li>
-                        <li>${addAlbum.value}</li>
-                        <li>Genre</li>
-                      </ul>
-                    </section>`;
-
+  //Add event listeners to delete buttons to remove
+  var deleteBtns = document.getElementsByClassName("delete");
+  console.log("deleteBtns", deleteBtns);
+  for (var i=0;i<deleteBtns.length;i++){
+      deleteBtns.item(i).addEventListener("click", function(event){
+        var remove = event.target;
+        remove.closest("section").removeChild(remove);
+      });
+  }
+    songList.innerHTML = musicHTML;
 }
 
-//Addevent listener to hide and unhide the add music page and filters and
 
+
+
+//Addevent listener to hide and unhide the add music page and filters and
 
 var viewMusicButton = document.getElementById("view-music-button");
 var addMusicButton = document.getElementById("add-music-button");
@@ -56,72 +62,74 @@ viewMusicButton.addEventListener("click", hideAddMusic);
 
 function showAddMusic(event){
   addMusicPage.classList.remove("hidden");
-
   songsListPage.classList.add("hidden")
-
   musicFilterPage.classList.add("hidden")
 
-  console.log("addMusicPage class", addMusicPage.classList);
-  console.log("musicFilterPage class", musicFilterPage.classList);
-  console.log("songsListPage", songsListPage.classList);
 };
 
 function hideAddMusic(event){
   addMusicPage.classList.add("hidden")
-
   songsListPage.classList.remove("hidden");
-
   musicFilterPage.classList.remove("hidden");
 
-  console.log("addMusicPage class", addMusicPage.classList);
-  console.log("musicFilterPage class", musicFilterPage.classList);
-  console.log("songsListPage", songsListPage.classList);
+
 };
 
 
+//Add button on Add Music page pushed another item to music.json file
 
-//Loop over the array, and remove any words or characters that obviously don't belong.
-songs.forEach(function(element, index, array){
-  array[index] = element.replace(/[@*()!]/g, "");
-})
+var addBtn = document.getElementById("add-button");
 
-
-//Find and replace the > character in each item with a - character.
-songs.forEach(function(element, index, array){
-  array[index] = element.replace(/[>]/g, "-");
-})
+addBtn.addEventListener("click", function(event){
+  var newArtist = document.getElementById("add-artist");
+  var newSong = document.getElementById("add-song");
+  var newAlbum = document.getElementById("add-song");
 
 
 
-//Adds Song list to DOM
 
-  var songList = document.getElementById("song-list");
 
-  songs.forEach(function(element, index, array){
-      var songStart = 0;
-      var songEnd = element.indexOf(" -");
-      var songName = element.slice(songStart, songEnd);
+});
 
-      var artistStart = element.indexOf("y ") + 2;
-      var artistEnd = element.indexOf(" on");
-      var artistName = element.slice(artistStart, artistEnd);
 
-      var albumStart = element.indexOf("um ") + 3;
-      var albumEnd = element.length;
-      var albumName = element.slice(albumStart, albumEnd);
 
-      var items = ` <section>
-                      <header>
-                        <h2>${songName}</h2>
-                      </header>
-                      <ul>
-                        <li>${artistName}</li>
-                        <li>${albumName}</li>
-                        <li>Genre</li>
-                      </ul>
-                    </section>`;
-      songList.innerHTML += items;
-  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

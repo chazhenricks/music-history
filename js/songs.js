@@ -15,8 +15,13 @@ var songList = document.getElementById("song-list");
 //getMusic function that runs when page loads
 function getMusic(event){
     musicList = JSON.parse(this.responseText);
+    populateDOM();
+  };
 
+
+function populateDOM(){
     var musicHTML = "";
+
     for (var i=0;i<musicList.music.length;i++){
         musicHTML +=
          ` <section>
@@ -87,7 +92,16 @@ addBtn.addEventListener("click", function(event){
   var newArtist = document.getElementById("add-artist");
   var newSong = document.getElementById("add-song");
   var newAlbum = document.getElementById("add-song");
+  var newGenre = document.getElementById("add-genre")
 
+  musicList.music.push(
+    {
+      "artist": newArtist.value,
+      "song": newSong.value,
+      "album": newAlbum.value,
+      "genre": newGenre.value
+    });
+  populateDOM();
 });
 
 

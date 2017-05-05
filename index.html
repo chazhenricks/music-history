@@ -8,6 +8,8 @@
 </head>
 
 <body>
+
+<!-- HEADER/NAV -->
 <header class="top-nav">
   <ul>
     <li><a href="#" id="view-music-button">View Music</a></li>
@@ -15,6 +17,10 @@
     <li><a href="#">Profile </a></li>
   </ul>
 </header>
+
+<!-- END HEADER/NAV -->
+
+<!-- FILTERS -->
 <div class="wrapper">
     <article class="filters" id="filters">
         <section class="song-length">
@@ -65,8 +71,16 @@
         </section>
     </article>
 
+    <!-- END FILTERS -->
+
+    <!-- SONG LIST -->
+
   <article id="song-list" class ="song-list"></article>
 
+  <!-- END SONG LIST -->
+
+
+<!-- ADD MUSIC PAGE -->
   <article class="add-music hidden" id="add-music">
     <div class="add-container">
       <label for="add-song">Song Name:</label>
@@ -90,8 +104,11 @@
     <button id="add-button" type="button">Add</button>
   </article>
 
+  <!-- END ADD SONG PAGE -->
+
 </div>
 
+<script src="js/jquery.min.js"></script>
 <script src="js/songs.js"></script>
 </body>
 </html>

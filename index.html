@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
-  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -12,7 +13,7 @@
 <!-- HEADER/NAV -->
 <header class="top-nav">
   <ul>
-    <li><a href="#" id="view-music-button">View Music</a></li>
+    <li><a href="#" class="hidden" id="view-music-button">View Music</a></li>
     <li><a href="#" id="add-music-button">Add Music</a></li>
     <li><a href="#">Profile </a></li>
   </ul>
@@ -67,7 +68,7 @@
         </section>
 
         <section class="filter-button">
-          <button type="button"> Filter </button>
+          <button id="filter-button" type="button"> Filter </button>
         </section>
     </article>
 
@@ -108,7 +109,9 @@
 
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/songs.js"></script>
+<script src="lib/node_modules/jquery/dist/jquery.js"></script>
+<script src="lib/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="lib/node_modules/handlebars/dist/handlebars.js"></script>
+<script src="dist/app.js"></script>
 </body>
 </html>

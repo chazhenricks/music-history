@@ -43,7 +43,6 @@ var Songs = (function(songlist){
 
 };
 
-
 //adds click events to delete buttons
 songlist.addDelete = function(){
 
@@ -84,37 +83,11 @@ songlist.eventListeners = function(){
   });
 
 };
-
-
-
   return songlist;
 
 })(Songs || {})
 
 Songs.ajaxCall1();
-
-
-
-
-// //Add button on Add Music page pushed another item to music2.json file
-
-// var addBtn = document.getElementById("add-button");
-
-// addBtn.addEventListener("click", function(event){
-//   var newArtist = document.getElementById("add-artist");
-//   var newSong = document.getElementById("add-song");
-//   var newAlbum = document.getElementById("add-song");
-//   var newGenre = document.getElementById("add-genre")
-
-//   musicList2.music.push(
-//     {
-//       "artist": newArtist.value,
-//       "song": newSong.value,
-//       "album": newAlbum.value,
-//       "genre": newGenre.value
-//     });
-//   populateDOM2();
-// });
 
 
 
